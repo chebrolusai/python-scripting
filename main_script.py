@@ -4,8 +4,8 @@ from subprocess import PIPE, run
 import sys
 import os_filesystem
 
-PATTERN = 'game'
-GO_EXTENTION = '.go'
+PATTERN            = 'game'
+GO_EXTENTION       = '.go'
 GO_COMPILE_COMMAND = ["go","build"]
 
 def create_json_metadata(filePath, directories):
@@ -39,7 +39,9 @@ def compile_go_code(directoryPath):
     for root, directories, files in os.walk(directoryPath):
         
         for file in files :
+
             if file.endswith(GO_EXTENTION):
+
                 run_go_compile_command(root,file)
                 
 
@@ -47,14 +49,17 @@ def compile_go_code(directoryPath):
 
 
 if __name__ == "__main__":
+
     # relative to the current path, grab the source and working dir from cmd line
     argumentsList = sys.argv
     if len(argumentsList) != 3:
+
         raise Exception("Only source directory and target directory should be passed")
     
     sourceDir, targetDir = argumentsList[1:]
 
     if not os.path.exists(sourceDir):
+        
         raise Exception("please enter an existing source directory")
 
     # create an absolute path from the given directories
