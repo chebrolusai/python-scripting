@@ -1,5 +1,5 @@
 <h1 align="center">
-🐍 Python Scripting
+🐍 Python Golang Compiler
 </h1>
 
 ## Introduction
